@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://api.fontshare.com/v2/css?f[]=array@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #222;
+            color: #ffffff;
+            background-image: repeating-linear-gradient(
+                to bottom,
+                transparent 7px,
+                rgba(0, 0, 0, 0.8) 9px,
+                rgba(0, 0, 0, 0.8) 13px,
+                transparent 13px
+            );
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 15px; 
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; 
+        }
+
+        .navbar a {
+            writing-mode: vertical-rl;
+            transform: rotate(-180deg);
+            margin: 30px 0; /* Increased margin for more gap */
+            font-size: 20px;
+            font-family: 'Array', sans-serif;
+            color: #9F9E8F;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ffffff;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            text-align: center;
+        }
+
+        #main {
+            font-size: calc(25px + 8vw);
+            line-height: 0.6;
+            text-shadow: 0 0 5px #000000,
+                0 0 15px #000000,
+                0 0 20px #080808,
+                0 0 40px #090909,
+                0 0 60px #000000,
+                0 0 10px #000000,
+                0 0 98px #2c2c2c;
+            color: #9F9E8F;
+            font-family: 'Array', sans-serif;
+            text-align: center;
+            animation: blink 12s infinite;
+        }
+
+        #main::after {
+            content: "studio";
+            display: block;
+            font-size: calc(25px + 8vw);
+        }
+
+        @-webkit-keyframes blink {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 0 0 5px #000000,
+                    0 0 15px #000000,
+                    0 0 20px #080808,
+                    0 0 40px #090909,
+                    0 0 60px #000000,
+                    0 0 10px #000000,
+                    0 0 98px #2c2c2c;
+                color: #9F9E8F;
+            }
+        }
+
+        @keyframes blink {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 0 0 5px #000000,
+                    0 0 15px #000000,
+                    0 0 20px #080808,
+                    0 0 40px #090909,
+                    0 0 60px #000000,
+                    0 0 10px #000000,
+                    0 0 98px #2c2c2c;
+                color: #9F9E8F;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#explore">Explore</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="main">
+        <h1 id="main">chane.</h1>
+        
+    </div>
+</body>
+
+</html>
