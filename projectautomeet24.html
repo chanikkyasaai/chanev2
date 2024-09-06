@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automeet24 - chane.studio</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest"> 
+    <link href="https://api.fontshare.com/v2/css?f[]=khand@400&f[]=array@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        
+        /*
+        font-family: 'Khand', sans-serif;
+font-family: 'Array', sans-serif;
+*/
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #222;
+            color: #ffffff;
+            background-image: repeating-linear-gradient(
+                to bottom,
+                transparent 7px,
+                rgba(0, 0, 0, 0.8) 9px,
+                rgba(0, 0, 0, 0.8) 13px,
+                transparent 13px
+            );
+            overflow-x: hidden;
+            font-family: 'Khand', sans-serif;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            writing-mode: vertical-rl;
+            transform: rotate(-180deg);
+            margin: 30px 0;
+            font-size: 20px;
+            font-family: 'Array', sans-serif;
+            color: #9F9E8F;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ffffff;
+        }
+
+
+
+        .main {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-right: 50px; /* Adjust margin as needed */
+            margin-top: 20px; /* Adjust top margin as needed */
+            position: fixed;
+            z-index: 2;
+        }
+
+        #main {
+            font-size: calc(10px + 3vw);
+            line-height: 0.6;
+            text-shadow: 0 0 5px #000000,
+                        0 0 15px #000000,
+                        0 0 20px #080808,
+                        0 0 40px #090909,
+                        0 0 60px #000000,
+                        0 0 10px #000000,
+                        0 0 98px #2c2c2c;
+            color: #9F9E8F;
+            font-family: 'Array', sans-serif;
+            text-align: right;
+        }
+
+        #main::after {
+            content: "studio";
+            display: block;
+            font-size: calc(10px + 3vw);
+        }
+
+
+        /* Main Content Styles */
+        .project-container {
+            padding: 100px 20px 60px 20px; /* Top padding accounts for fixed navbar */
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: left;
+            margin-left: 40px;
+        }
+
+        .project-container h1 {
+            font-family: 'Array', sans-serif;
+            color: #9F9E8F;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .project-container .techstack,
+        .project-container .duration {
+            font-family: 'Array', sans-serif;
+            color: #9F9E8F;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .project-container .description,
+        .project-container .learned {
+            font-family: 'Khand', sans-serif;
+            color: #ffffff;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .github-button {
+            display: inline-block;
+            background-color: #9F9E8F;
+            color: #222;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-family: 'Array', sans-serif;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .github-button:hover {
+            background-color: #ffffff;
+            color: #222;
+        }
+
+        /* Responsive Design */
+        @media only screen and (max-width: 768px) {
+            .project-container {
+                padding: 80px 15px 60px 15px;
+            }
+
+            .project-container h1 {
+                font-size: 28px;
+            }
+
+            .project-container .techstack,
+            .project-container .duration {
+                font-size: 16px;
+            }
+
+            .project-container .description,
+            .project-container .learned {
+                font-size: 16px;
+            }
+
+            .studio-text {
+                font-size: 14px;
+            }
+        }
+
+        .video-container {
+    position: relative;
+    width: 80vw; /* 80% of viewport width */
+    height: 80vh; /* 80% of viewport height */
+    max-width: 100%; /* Ensure it doesn't exceed viewport width */
+    max-height: 100%; /* Ensure it doesn't exceed viewport height */
+    margin: 20px auto; /* Center the video horizontally */
+    border-radius: 20px; /* Optional: rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Optional: shadow effect */
+    background: #000; /* Background color to hide any black bars */
+    overflow: hidden; /* Hide overflow to maintain aspect ratio */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+strong, h3 {
+            color: #9F9E8F;
+            font-family: 'Array';
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Navbar with Back Option -->
+    <div class="navbar">
+        <a href="javascript:history.back()">← Back</a>
+    </div>
+
+    <!-- chane.studio Text -->
+    <div class="main">
+        <h1 id="main">chane.</h1>
+    </div>
+    
+
+    <!-- Main Project Content -->
+    <div class="project-container">
+        <h1>Automeet24: Event Management Platform for Automobile Dept. @MIT <h3>requested project- unpaid</h3></h1>
+        <div class="techstack"><strong>Tech Stack:</strong> HTML, CSS, JS, JQuery, Slick carousel</div>
+        <div class="duration"><strong>Duration:</strong> March 2024 - March 2024</div>
+        <a href="https://automeet24.tech" class="github-button" target="_blank"><i class="fa-solid fa-globe"></i> View Live page</a>
+        
+        <div class="description">
+            <strong>Description:</strong>
+            <p>
+                <h3>AutoMeet24: </h3>
+
+AutoMeet24 is a static website designed to provide essential information about the Department of Automobile Engineering's upcoming symposium at MIT. It serves as a centralized hub for event details, registration, and general information related to the symposium.
+<br>
+
+<h3>Key Features:</h3>
+<h3> Event Overview:</h3>
+
+AutoMeet24 offers a straightforward overview of AutoMeet'24, the annual technical symposium hosted by MIT's Department of Automobile Engineering. This section includes key event details, such as the date, location, and purpose of the symposium, providing visitors with a clear understanding of what to expect. <br>
+<h3>Event Highlights:</h3>
+
+The website features highlights of past events and important aspects of the upcoming symposium. This includes a brief description of the Royal Auto Expo and other notable events that showcase the scale and excitement of the symposium. <br>
+<h3>Workshop Information:</h3>
+
+A section dedicated to various workshops available at the symposium. Users can view details about each workshop, including topics covered, schedule, and registration links. The site uses Google Forms to streamline the registration process for these workshops. <br>
+<h3>Technical Events:</h3>
+
+Information about technical events such as Auto Quiz, Paper Presentations, and Hackathons is provided. Each event listing includes a brief description and a Google Form link for easy registration. <br>
+<h3>Non-Technical Events:</h3>
+
+Details about non-technical events, including Connexion, One Man Show, and Business Innovation, are also available. This section offers a variety of activities for participants who are interested in more than just technical sessions. <br>
+<h3>User Experience:</h3>
+AutoMeet24 is designed with simplicity and clarity in mind. As a static website, it offers a clean and straightforward interface, making it easy for users to navigate and find the information they need. Registration for events is made available through Google Forms, ensuring a smooth and efficient process.
+
+        </div>
+        <div class="learned">
+            <strong>What I Learned:</strong>
+            <p>
+                Working on the AutoMeet24 project taught me a lot about web development. I improved my HTML and CSS skills by creating a clean, well-designed static website. I learned basic JavaScript to make the site interactive and used jQuery to simplify tasks like event handling. Integrating the Slick carousel showed me how to display content in a dynamic way. Overall, the project helped me understand how to manage and execute a web development project from start to finish, enhancing my skills in creating user-friendly websites.
+            </p>
+        </div>
+        
+        <br>
+        <a href="https://github.com/chanikkyasaai/automeet24" class="github-button" target="_blank"><i class="fa-brands fa-github"> </i> View on  GitHub</a>
+    </div>
+</body>
+</html>

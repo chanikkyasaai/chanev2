@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automeet24 - chane.studio</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest"> 
+    <link href="https://api.fontshare.com/v2/css?f[]=khand@400&f[]=array@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        
+        /*
+        font-family: 'Khand', sans-serif;
+font-family: 'Array', sans-serif;
+*/
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #222;
+            color: #ffffff;
+            background-image: repeating-linear-gradient(
+                to bottom,
+                transparent 7px,
+                rgba(0, 0, 0, 0.8) 9px,
+                rgba(0, 0, 0, 0.8) 13px,
+                transparent 13px
+            );
+            overflow-x: hidden;
+            font-family: 'Khand', sans-serif;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            writing-mode: vertical-rl;
+            transform: rotate(-180deg);
+            margin: 30px 0;
+            font-size: 20px;
+            font-family: 'Array', sans-serif;
+            color: #9F9E8F;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ffffff;
+        }
+
+
+
+        .main {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-right: 50px; /* Adjust margin as needed */
+            margin-top: 20px; /* Adjust top margin as needed */
+            position: fixed;
+            z-index: 2;
+        }
+
+        #main {
+            font-size: calc(10px + 3vw);
+            line-height: 0.6;
+            text-shadow: 0 0 5px #000000,
+                        0 0 15px #000000,
+                        0 0 20px #080808,
+                        0 0 40px #090909,
+                        0 0 60px #000000,
+                        0 0 10px #000000,
+                        0 0 98px #2c2c2c;
+            color: #9F9E8F;
+            font-family: 'Array', sans-serif;
+            text-align: right;
+        }
+
+        #main::after {
+            content: "studio";
+            display: block;
+            font-size: calc(10px + 3vw);
+        }
+
+
+        /* Main Content Styles */
+        .project-container {
+            padding: 100px 20px 60px 20px; /* Top padding accounts for fixed navbar */
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: left;
+            margin-left: 40px;
+        }
+
+        .project-container h1 {
+            font-family: 'Array', sans-serif;
+            color: #9F9E8F;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .project-container .techstack,
+        .project-container .duration {
+            font-family: 'Array', sans-serif;
+            color: #9F9E8F;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .project-container .description,
+        .project-container .learned {
+            font-family: 'Khand', sans-serif;
+            color: #ffffff;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .github-button {
+            display: inline-block;
+            background-color: #9F9E8F;
+            color: #222;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-family: 'Array', sans-serif;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .github-button:hover {
+            background-color: #ffffff;
+            color: #222;
+        }
+
+        /* Responsive Design */
+        @media only screen and (max-width: 768px) {
+            .project-container {
+                padding: 80px 15px 60px 15px;
+            }
+
+            .project-container h1 {
+                font-size: 28px;
+            }
+
+            .project-container .techstack,
+            .project-container .duration {
+                font-size: 16px;
+            }
+
+            .project-container .description,
+            .project-container .learned {
+                font-size: 16px;
+            }
+
+            .studio-text {
+                font-size: 14px;
+            }
+        }
+
+        .video-container {
+    position: relative;
+    width: 80vw; /* 80% of viewport width */
+    height: 80vh; /* 80% of viewport height */
+    max-width: 100%; /* Ensure it doesn't exceed viewport width */
+    max-height: 100%; /* Ensure it doesn't exceed viewport height */
+    margin: 20px auto; /* Center the video horizontally */
+    border-radius: 20px; /* Optional: rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Optional: shadow effect */
+    background: #000; /* Background color to hide any black bars */
+    overflow: hidden; /* Hide overflow to maintain aspect ratio */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+strong, h3 {
+            color: #9F9E8F;
+            font-family: 'Array';
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Navbar with Back Option -->
+    <div class="navbar">
+        <a href="javascript:history.back()">← Back</a>
+    </div>
+
+    <!-- chane.studio Text -->
+    <div class="main">
+        <h1 id="main">chane.</h1>
+    </div>
+    
+
+<!-- Main Project Content -->
+<div class="project-container">
+    <h1>Training and Placement Management System in C <h3>Basic Project</h3></h1>
+    <div class="techstack"><strong>Tech Stack:</strong> C Language, File Systems</div>
+    <div class="duration"><strong>Duration:</strong> Feb 2023 - Feb 2023</div>
+    
+    <div class="description">
+        <strong>Description:</strong>
+        <p>
+            The Training and Placement Management System is a console-based application developed in C that facilitates the management of job postings and candidate registrations using file systems. This system provides functionalities for registering jobs and candidates, viewing job listings and candidates, applying for jobs, updating job details, and handling job vacancies efficiently.
+            <br>
+
+            <h3>Key Features:</h3>
+            <h3> Job Registration:</h3>
+            The system allows users to register new job postings by entering job title, description, category, and number of vacancies. This information is stored in a text file for persistence.
+            <br>
+            <h3> Candidate Registration:</h3>
+            Users can register as candidates by providing their name, email, category, and qualification. This data is also stored in a text file.
+            <br>
+            <h3> View Jobs:</h3>
+            Users can view the list of all available jobs along with their details such as title, description, category, and vacancies.
+            <br>
+            <h3> View Candidates:</h3>
+            The system allows viewing of registered candidates with details like name, email, category, and qualification.
+            <br>
+            <h3> Apply for Jobs:</h3>
+            Candidates can apply for jobs by specifying the job title and their email. The system updates the job's vacancy count upon successful application.
+            <br>
+            <h3> Update Job Details:</h3>
+            Users can update existing job details, including title, description, category, and vacancies. This feature ensures that job information is kept current.
+            <br>
+            <h3>User Experience:</h3>
+            The system is designed to be straightforward and user-friendly, providing essential functionalities through a command-line interface. The use of file systems ensures data persistence, and the simplicity of the interface makes it accessible for users to manage job and candidate information efficiently.
+        </p>
+    </div>
+    <div class="learned">
+        <strong>What I Learned:</strong>
+        <p>
+            Working on this project enhanced my understanding of file handling and data management in C. I gained experience in managing different types of data using text files and improved my skills in implementing basic functionalities like job registration, candidate registration, and file operations. The project also taught me about the importance of maintaining data consistency and handling user inputs effectively.
+        </p>
+    </div>
+    
+    <br>
+    <a href="https://github.com/chanikkyasaai/training-placementmanagementsystem" class="github-button" target="_blank"><i class="fa-brands fa-github"></i> View on GitHub</a>
+</div>
+
+</body>
+</html>
