@@ -395,7 +395,15 @@
     margin-bottom: 20px;
 }
 
+.ripple-effect {
+    position: relative;
+    display: inline-block;
+    z-index: 1; /* Establish stacking context */
+}
+
 .profile-image {
+    position: relative;
+    z-index: 2; /* Ensure the image stays above the ripple */
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -406,6 +414,48 @@
 
 .profile-image:hover {
     transform: scale(1.05);
+}
+
+/* First ripple */
+.ripple-effect::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250px;
+    height: 250px;
+    background: rgba(159, 159, 159, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple 2s infinite;
+    z-index: 0;
+}
+
+/* Second ripple */
+.ripple-effect::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250px;
+    height: 250px;
+    background: rgba(159, 159, 159, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple 2s infinite;
+    animation-delay: 1s; /* Delay to make the second ripple start later */
+    z-index: 0;
+}
+
+@keyframes ripple {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
 }
 
 .profile-text h2 {
@@ -480,7 +530,9 @@
     <div id="home" class="home">
         <div id="profile" class="profile">
             <div class="profile-image-container">
-                <img src="chanepic.png" alt="Profile Picture" class="profile-image">
+                <div class="ripple-effect">
+                    <img src="chanepic.png" alt="Profile Picture" class="profile-image">
+                </div>
             </div>
             <div class="profile-text">
                 <h2>I'm chane.</h2>
