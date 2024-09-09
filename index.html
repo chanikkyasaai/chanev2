@@ -514,11 +514,92 @@
     line-height: 1.6;
 }
 
+            .preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    animation: fadeOut 4s forwards ease-in-out;
+    z-index: 9999;
+}
+
+.content {
+    text-align: center;
+}
+
+.ganesha-image {
+    max-width: 100%;
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.ganesha-text {
+    font-family: 'Array', sans-serif;
+    font-size: 2em;
+    color: #ff5733; /* Vibrant color */
+    text-transform: uppercase;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+/* Fade-out animation for preloader */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1; /* Preloader remains fully visible for the first 3 seconds */
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Text animation */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .ganesha-image {
+        width: 150px;
+    }
+    .ganesha-text {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .ganesha-image {
+        width: 120px;
+    }
+    .ganesha-text {
+        font-size: 1.2em;
+    }
+}
 
     </style>
 </head>
 
 <body>
+        <div class="preloader">
+        <div class="content">
+            <img src="ganesha.png" alt="Ganesha" class="ganesha-image">
+            <h1 class="ganesha-text">Happy Ganesh Chaturthi</h1>
+        </div>
+    </div>
     <div class="navbar">
         <a href="#dot"><b>➤</b></a>
         <a href="#home"><b>Home</b></a>
