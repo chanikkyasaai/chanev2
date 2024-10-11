@@ -537,52 +537,54 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-        /* My Logical Skills Section */
+/* My Logical Skills Section */
 #logical-skills {
     background-color: transparent;
-    padding: 60px 20px;
+    padding: 40px 10px; /* Reduced padding for mobile */
 }
 
 #logical-skills h2 {
     font-family: 'Array', sans-serif;
     color: #9F9E8F;
-    font-size: 36px;
+    font-size: 28px; /* Adjusted for better scaling on mobile */
     text-align: center;
 }
 
-#logical-skills .lead {
-    font-family: 'Sevillana', cursive;
-    color: #ffffff;
-    font-size: 18px;
-    line-height: 1.6;
-    text-align: center;
-    margin: 20px 0;
-}
-        #logical-skills p {
+#logical-skills .lead, #logical-skills p {
     font-family: 'Array', sans-serif;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 16px; /* Smaller font for mobile */
     line-height: 1.6;
     text-align: center;
-    margin: 20px 0;
+    margin: 15px 0;
 }
-
 
 #logical-skills img {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#logical-skills p a:hover {
-    color: #ffffff;
+    max-width: 100%; /* Ensure the image doesn't overflow */
+    height: auto; /* Maintain aspect ratio */
 }
 
 /* Responsive Adjustments */
 @media only screen and (max-width: 768px) {
-    #logical-skills .lead {
-        font-size: 16px;
+    #logical-skills {
+        padding: 30px 10px; /* Further reduce padding for smaller screens */
+    }
+
+    #logical-skills h2 {
+        font-size: 24px; /* Smaller heading for mobile */
+    }
+
+    #logical-skills .lead, #logical-skills p {
+        font-size: 14px; /* Smaller font size on mobile */
+    }
+
+    #logical-skills img {
+        max-width: 90%; /* Ensure image scales down on small screens */
     }
 }
+
 
 
     </style>
