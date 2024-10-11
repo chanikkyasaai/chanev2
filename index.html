@@ -537,52 +537,54 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* My Logical Skills Section */
-#logical-skills {
-    background-color: transparent;
-    padding: 40px 10px; /* Reduced padding for mobile */
+/* Container */
+.container {
+    max-width: 100%; /* Ensure the container is not wider than the viewport */
+    padding: 0 15px; /* Optional: Add padding for better spacing */
+    box-sizing: border-box; /* Include padding in width calculations */
+    overflow: hidden; /* Prevent overflow */
 }
 
-#logical-skills h2 {
-    font-family: 'Array', sans-serif;
-    color: #9F9E8F;
-    font-size: 28px; /* Adjusted for better scaling on mobile */
-    text-align: center;
-}
-
-#logical-skills .lead, #logical-skills p {
-    font-family: 'Array', sans-serif;
+/* Paragraph in Logical Skills */
+#leet {
+    font-family: 'Array', cursive;
     color: #ffffff;
-    font-size: 16px; /* Smaller font for mobile */
-    line-height: 1.6;
-    text-align: center;
-    margin: 15px 0;
+    font-size: 20px; /* Increase font size */
+    line-height: 1.6; /* Line height for better readability */
+    margin: 10px 0; /* Space between paragraphs */
 }
 
-#logical-skills img {
+#leetimg {
+    display: flex; /* Use Flexbox */
+    justify-content: center; /* Center the image */
+    margin: 20px 0; /* Add margin for spacing */
+}
+
+#leetimg img {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 100%; /* Ensure the image doesn't overflow */
+    max-width: 100%; /* Ensure image doesn't overflow */
     height: auto; /* Maintain aspect ratio */
 }
 
 /* Responsive Adjustments */
 @media only screen and (max-width: 768px) {
-    #logical-skills {
-        padding: 20px;
+    #leet {
+        font-size: 16px; /* Smaller font size on mobile */
     }
 
-    #logical-skills h2 {
-        font-size: 28px;; /* Smaller heading for mobile */
+    #leetimg {
+        width: 100%; /* Reduce width on mobile */
+        max-width: 100%; /* Ensure it doesn’t overflow the screen */
     }
-
-    #logical-skills .lead, #logical-skills p {
-        font-size: 18px; /* Smaller font size on mobile */
-    }
-
 }
 
-
+@media only screen and (max-width: 480px) {
+    #leetimg {
+        width: 100%; /* Use 100% width for smaller screens */
+        max-width: 100%; /* Prevent any overflow */
+    }
+}
 
     </style>
 </head>
@@ -640,25 +642,21 @@
   </div>
 </div>
 
-        <!-- My Logical Skills Section -->
-<section id="logical-skills" class="explore">
-    <div class="home">
+
+<div class="container">
         <h2>My Logical Skills</h2>
-        
-        <!-- DSA Problem Solving Text -->
-        <p>
+
+        <p id="leet">
             I have a strong interest in solving problems using DSA.
             I recently started this journey and have solved <strong>150+ DSA problems</strong> across various platforms.
         </p>
 
-        <!-- LeetCode Stats -->
-        <p align="center">
+        <div id="leetimg">
             <a href="https://leetcode.com/chanikyanelapatla/">
-                <img src="https://leetcard.jacoblin.cool/chanikyanelapatla?theme=dark" alt="LeetCode Stats" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <img src="https://leetcard.jacoblin.cool/chanikyanelapatla?theme=dark" alt="LeetCode Stats">
             </a>
-        </p>
+        </div>
     </div>
-</section>
 
         
     </div>
