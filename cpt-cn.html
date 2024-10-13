@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cisco Packet Tracer Guide | chane.studio</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link href="https://api.fontshare.com/v2/css?f[]=khand@400&f[]=array@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #222;
+            color: #ffffff;
+            background-image: repeating-linear-gradient(
+                to bottom,
+                transparent 7px,
+                rgba(0, 0, 0, 0.8) 9px,
+                rgba(0, 0, 0, 0.8) 13px,
+                transparent 13px
+            );
+            overflow-x: hidden;
+            font-family: 'Khand', sans-serif;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            writing-mode: vertical-rl;
+            transform: rotate(-180deg);
+            margin: 30px 0;
+            font-size: 20px;
+            font-family: 'Array', sans-serif;
+            color: #9F9E8F;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ffffff;
+        }
+
+        /* Main Heading */
+        .main {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-right: 50px;
+            margin-top: 20px;
+            z-index: 2;
+        }
+
+        #main {
+            font-size: calc(10px + 3vw);
+            line-height: 0.6;
+            text-shadow: 0 0 5px #000000,
+                0 0 15px #000000,
+                0 0 20px #080808,
+                0 0 40px #090909,
+                0 0 60px #000000,
+                0 0 10px #000000,
+                0 0 98px #2c2c2c;
+            color: #9F9E8F;
+            font-family: 'Array', sans-serif;
+            text-align: right;
+        }
+
+        #main::after {
+            content: "studio";
+            display: block;
+            font-size: calc(10px + 3vw);
+        }
+
+        /* Content Section Styles */
+        .project-container {
+            padding: 120px 40px 60px 80px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .project-container h1 {
+            font-family: 'Array', sans-serif;
+            color: #9F9E8F;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .project-container h2 {
+            font-family: 'Array', sans-serif;
+            color: #9F9E8F;
+            font-size: 28px;
+            margin-top: 30px;
+        }
+
+        .project-container p {
+            font-family: 'Khand', sans-serif;
+            color: #ffffff;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .project-container ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .project-container li {
+            font-family: 'Khand', sans-serif;
+            color: #ffffff;
+            margin: 10px 0;
+            position: relative;
+        }
+
+        .project-container li::before {
+            content: "➤";
+            color: #9F9E8F;
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        /* Button Styles */
+        .github-button {
+            display: inline-block;
+            background-color: #9F9E8F;
+            color: #222;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-family: 'Array', sans-serif;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        .github-button:hover {
+            background-color: #ffffff;
+            color: #222;
+        }
+
+        /* Responsive Design */
+        @media only screen and (max-width: 768px) {
+            .project-container {
+                padding: 100px 15px 60px 15px;
+                margin-left: 10px; /* Adjust left margin for mobile */
+            }
+
+            .project-container h1 {
+                font-size: 28px;
+            }
+
+            .project-container h2 {
+                font-size: 24px;
+            }
+
+            .project-container p {
+                font-size: 16px;
+            }
+
+            .navbar a {
+                font-size: 16px;
+            }
+        }
+
+        /* Video Embed Styles */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar with Back Option -->
+    <div class="navbar">
+        <a href="javascript:history.back()">← Back</a>
+    </div>
+
+    <!-- Main Heading -->
+    <div class="main">
+        <h1 id="main">chane.</h1>
+    </div>
+
+    <!-- Content Section -->
+    <div class="project-container">
+        <h1>Introduction to Cisco Packet Tracer</h1>
+        <p>
+            Cisco Packet Tracer is a powerful network simulation tool that allows you to create and manage virtual network environments. Developed by Cisco, it is widely used for learning and practicing networking concepts, especially for those pursuing Cisco certifications. This tool helps you visualize how networks function and how different devices interact with each other.
+        </p>
+
+        <h2>Setting Up Cisco Packet Tracer</h2>
+        <p>To get started, download and install Cisco Packet Tracer from the <a href="https://www.netacad.com/" target="_blank" style="color: #9F9E8F;">Cisco Networking Academy</a>. Follow these steps:</p>
+        <ul>
+            <li>Visit the Cisco Networking Academy website and create a free account.</li>
+            <li>Download the latest version of Cisco Packet Tracer for your operating system.</li>
+            <li>Follow the installation instructions provided, then launch the application.</li>
+            <li>Explore the interface, which includes a range of network devices and configurations you can use to build networks.</li>
+        </ul>
+
+        <h2>Understanding Real-Time Mode and Simulation Mode</h2>
+        <p>
+            Cisco Packet Tracer has two operational modes: Real-Time Mode and Simulation Mode. Understanding the difference between these modes is crucial for effective network testing and troubleshooting:
+        </p>
+        <ul>
+            <li><strong>Real-Time Mode:</strong> This mode simulates the real behavior of network devices as they operate. You can see live interactions between devices and use features like the Ping command to test connectivity. This mode is excellent for real-world application testing.</li>
+            <li><strong>Simulation Mode:</strong> In this mode, you can visualize the data packets as they move through the network. This mode is particularly useful for educational purposes, allowing you to observe how data is transmitted, where it gets forwarded, and how devices respond. It helps in troubleshooting by allowing you to pause the simulation and analyze packet flow at each step.</li>
+        </ul>
+
+        <h2>Building a Peer-to-Peer Network</h2>
+        <p>Let’s start with a simple peer-to-peer connection. This is a direct connection between two devices, useful for basic network testing:</p>
+        <ul>
+            <li>From the device panel, drag two desktop computers onto the workspace.</li>
+            <li>Select a Crossover Cable from the Connections menu (the lightning bolt icon). Use this to connect one computer’s FastEthernet port to the other computer’s FastEthernet port.</li>
+            <li>Click on the first computer, go to the Desktop tab, and select IP Configuration. Assign it an IP address, such as 192.168.1.1.</li>
+            <li>Do the same for the second computer, but assign it a different IP address in the same network, such as 192.168.1.2.</li>
+            <li>To test connectivity, open the Command Prompt on the first computer and type ping 192.168.1.2. You should receive a reply, confirming a successful connection.</li>
+        </ul>
+
+        <h2>Building a Network with a Hub</h2>
+        <p>Hubs broadcast data to all connected devices, which makes them suitable for small, straightforward networks. Here’s how to create a network using a hub:</p>
+        <ul>
+            <li>Drag a Hub and two computers onto the workspace.</li>
+            <li>Use Straight-Through Cables to connect each computer to the hub.</li>
+            <li>Assign IP addresses within the same subnet to both computers, for example, 192.168.2.1 and 192.168.2.2.</li>
+            <li>Test connectivity by using the Ping tool, as done in the peer-to-peer setup.</li>
+        </ul>
+
+        <h2>Setting Up a Network with a Switch</h2>
+        <p>Switches allow for efficient network traffic management by forwarding data only to the intended recipient. Let’s set up a small LAN with a switch:</p>
+        <ul>
+            <li>Drag a Switch onto the workspace, along with three computers.</li>
+            <li>Use Straight-Through Cables to connect each computer to the switch.</li>
+            <li>Assign IP addresses such as 192.168.3.1, 192.168.3.2, and 192.168.3.3 to the computers.</li>
+            <li>Ping between any two computers to test connectivity. Notice that, unlike a hub, the switch will direct traffic only to the target computer.</li>
+        </ul>
+
+        <h2>Connecting Two Networks with a Router</h2>
+        <p>Routers enable communication between separate networks. They are essential for connecting different LANs or facilitating internet access. Here’s how to configure a router for two networks:</p>
+        <ul>
+            <li>Create two LANs with distinct IP ranges, such as 10.0.0.x for one network and 192.168.4.x for the other.</li>
+            <li>Drag a Router onto the workspace, and connect each switch to the router using Straight-Through Cables.</li>
+            <li>Assign IP addresses to the router interfaces to match each network’s range.</li>
+            <li>On each computer, set the default gateway to the corresponding router interface IP. This enables routing between networks.</li>
+            <li>Ping a device on the other network to ensure they can communicate.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>By following these steps, you can build and configure basic network topologies in Cisco Packet Tracer. This guide covers peer-to-peer, hub-based, switch-based, and routed networks, providing a foundation for further exploration of networking concepts in Packet Tracer.</p>
+
+        <a href="https://github.com/chanikkyasaai" target="_blank" class="github-button">More Resources on GitHub</a>
+    </div>
+
+</body>
+
+</html>
